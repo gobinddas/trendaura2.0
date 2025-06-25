@@ -1,0 +1,58 @@
+
+
+body,
+p,
+a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+
+
+}
+
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6 {
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  color: $secondaryColor;
+}
+
+
+p {
+  font-family: $roboto;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: $black;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  // background-color: rgba(0, 0, 0, 0.952);
+}
+
+.circular-gallery {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.circular-gallery:active {
+  cursor: grabbing;
+}

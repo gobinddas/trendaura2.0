@@ -1,0 +1,127 @@
+.header-section {
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.925);
+    overflow: hidden;
+    height: 80px;
+    .header-fix-bg {
+       height: 100%;
+       width: 100%;
+
+       position: absolute;
+        z-index: -99;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffffec;
+        }
+
+    }
+
+
+    .container {
+        position: relative;
+        z-index: 999999;
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 0px;
+
+
+            .brand {
+                width: 180px;
+            }
+
+            .nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                li {
+                    a {
+                        color: $black;
+                        font-family: $national;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        
+                    }
+                }
+
+
+
+            }
+
+            .quick-res {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                button {
+                    position: relative;
+                    padding: 10px 30px;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    font-size: 14px;
+                    overflow: hidden;
+                    border: 2px solid white;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: conic-gradient(from 0deg,
+                                transparent 270deg,
+                                #00f5ff 270deg,
+                                #ff00ff 315deg,
+                                transparent 315deg);
+                        animation: rotate 4s linear infinite;
+                        z-index: -1;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 2px;
+                        left: 2px;
+                        right: 2px;
+                        bottom: 2px;
+                        background: #1a1a2e;
+                        border-radius: 46px;
+                        z-index: -1;
+                    }
+
+                    &:hover {
+                        &::before {
+                            animation: rotate 2s linear infinite;
+                        }
+                    }
+                }
+            }
+
+
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
