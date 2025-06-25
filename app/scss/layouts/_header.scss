@@ -5,11 +5,12 @@
     background-color: rgba(255, 255, 255, 0.925);
     overflow: hidden;
     height: 80px;
-    .header-fix-bg {
-       height: 100%;
-       width: 100%;
 
-       position: absolute;
+    .header-fix-bg {
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
         z-index: -99;
 
         &::before {
@@ -50,7 +51,7 @@
                         text-transform: uppercase;
                         font-weight: 700;
                         letter-spacing: 2px;
-                        
+
                     }
                 }
 
@@ -73,7 +74,11 @@
                     color: white;
                     font-size: 14px;
                     overflow: hidden;
-                    border: 2px solid white;
+                    border: 2px solid $black;
+                    text-transform: uppercase;
+                    font-family: $national;
+                    font-size: 14px;
+                    letter-spacing: 1px;
 
                     &::before {
                         content: '';
@@ -83,10 +88,10 @@
                         width: 200%;
                         height: 200%;
                         background: conic-gradient(from 0deg,
-                                transparent 270deg,
-                                #00f5ff 270deg,
-                                #ff00ff 315deg,
-                                transparent 315deg);
+                                rgb(0, 0, 0) 270deg,
+                                #f54500 270deg,
+                                #f54500 315deg,
+                                black 315deg);
                         animation: rotate 4s linear infinite;
                         z-index: -1;
                     }
@@ -98,7 +103,7 @@
                         left: 2px;
                         right: 2px;
                         bottom: 2px;
-                        background: #1a1a2e;
+                        background: $black;
                         border-radius: 46px;
                         z-index: -1;
                     }
@@ -107,6 +112,17 @@
                         &::before {
                             animation: rotate 2s linear infinite;
                         }
+                    }
+                }
+                .cart{
+                    position: relative;
+                    span{
+                        position: absolute;
+                        top: -15;
+                        right: -10px;
+                        color: $primaryColor;
+                        font-size: 16px;
+                        font-weight: 900;
                     }
                 }
             }

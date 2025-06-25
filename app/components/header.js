@@ -24,7 +24,9 @@ const Header = () => {
             <div className='quick-res'>
              
               <button>Login</button>
-               <div className='cart'>  <ShoppingCart /></div>
+               <div className='cart'>  <ShoppingCart />
+               <span>10</span>
+               </div>
             </div>
         </div>
       </div>
