@@ -4,7 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import { ChromaProductGrid } from './ProductCard';
+import { ProductCard } from './ProductCard';
 
 const products = [
   { id: 1, name: 'Classic Sneakers', price: 59.99, image: './banner1.jpg' },
@@ -38,7 +38,7 @@ const IndexProduct = () => (
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <ChromaProductGrid items={[product]} columns={1} />
+            <ProductCard product={product} />
           </SwiperSlide>
         ))}
       </Swiper>

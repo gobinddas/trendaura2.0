@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu,ShoppingCart  } from 'lucide-react';
+import { Menu, ShoppingCart, House, Shirt, Store, UserRound } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <img src="./bg.jpg" />
       </div>
 
-      
+
 
       <div className='container'>
         <div className='nav-bar'>
@@ -16,18 +16,28 @@ const Header = () => {
             <img src='./logo-dark.png' />
           </div>
           <ul className='nav'>
-          <li><a>Home</a></li>
-           <li><a>Collections</a></li>
-           <li><a>Brand</a></li>
-           
+            <li><a>Home</a></li>
+            <li><a>Collections</a></li>
+            <li><a>Brand</a></li>
+
           </ul>
-            <div className='quick-res'>
-             
-              <button>Login</button>
-               <div className='cart'>  <ShoppingCart />
-               <span>10</span>
-               </div>
+
+
+
+          <ul className='mobile-nav'>
+            <li><a><House /> </a></li>
+            <li><a> <Shirt /></a></li>
+            <li><a>   <Store /></a></li>
+            <li><a><UserRound /></a></li>
+          </ul>
+
+          <div className='quick-res'>
+
+            <button>Login</button>
+            <div className='cart'>  <ShoppingCart className='icon' />
+              <span>10</span>
             </div>
+          </div>
         </div>
       </div>
     </div>

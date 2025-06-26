@@ -1,20 +1,22 @@
-.section-newlunch {
+@media (max-width: 768px) {
+    .section-newlunch {
 
-   
-       
-        // background-color: #ff8e3149;
-        border-radius: 20px;
-        h3{
-            font-size: 40px;
-            color: $black;
-            text-align: center;
-            font-family: "National Park", sans-serif;
-        }
-        .circular-gallery{
-            height: 500px;
-            canvas{
-                height: 100%;
-                
+        .container {
+
+            .inner {
+
+                 height: 400px;
+                .orb-container {
+                    width: 100% !important;
+                    height: 100% !important;
+                    span{
+                        font-size: 20px !important;
+                    }
+                }
             }
+
         }
+
+
+    }
 }
