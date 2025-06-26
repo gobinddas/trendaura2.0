@@ -139,8 +139,9 @@
                     }
                     span{
                         position: absolute;
-                        top: -15;
-                        right: -10px;
+                        top: -12;
+                      left: 50%;
+                      transform: translate(-50%);
                         color: $primaryColor;
                         font-size: 16px;
                         font-weight: 900;
@@ -171,45 +172,20 @@
 @media (max-width: 992px) {
 
 .header-section {
-    width: 100vw;
-    position: fixed;
-    z-index: 9999;
-    background-color: rgba(255, 255, 255, 0.925);
-    overflow: hidden;
+    
     height: 80px;
 
-    .header-fix-bg {
-        height: 100%;
-        width: 100vw;
-
-        position: absolute;
-        z-index: -99;
-
-        &::before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: #ffffffec;
-        }
-
-    }
+   
 
 
     .container {
-        position: relative;
-        z-index: 999999;
+       
 
         .nav-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 7px 0px;
+           
 
 
-            .brand {
-                width: 180px;
-            }
+            
 
             .nav {
                 display: none;
@@ -239,85 +215,73 @@
 
             }
 
+          
+
+
+
+        }
+    }
+}
+
+
+}
+
+
+
+
+
+@media (max-width: 576px) {
+
+.header-section {
+  
+    height: 60px;
+
+    
+
+
+    .container {
+       
+
+        .nav-bar {
+            
+
+
+            .brand {
+                width: 120px;
+            }
+
+            .nav {
+                display: none;
+               
+
+
+
+            }
+           
+
             .quick-res {
-                display: flex;
-                gap: 20px;
-                align-items: center;
+               
 
                 button {
-                    position: relative;
-                    padding: 10px 30px;
-                    border-radius: 50px;
-                    cursor: pointer;
-                    background-color: transparent;
-                    border: none;
-                    color: white;
-                    font-size: 14px;
-                    overflow: hidden;
-                    border: 2px solid $black;
+                    padding: 7px 20px;
+                   ;
+                    border: 1px solid $black;
                     text-transform: uppercase;
                     font-family: $national;
-                    font-size: 14px;
-                    letter-spacing: 1px;
+                    font-size: 12px;
 
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: -50%;
-                        left: -50%;
-                        width: 200%;
-                        height: 200%;
-                        background: conic-gradient(from 0deg,
-                                rgb(0, 0, 0) 270deg,
-                                #f54500 270deg,
-                                #f54500 315deg,
-                                black 315deg);
-                        animation: rotate 4s linear infinite;
-                        z-index: -1;
-                    }
+                   
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 2px;
-                        left: 2px;
-                        right: 2px;
-                        bottom: 2px;
-                        background: $black;
-                        border-radius: 46px;
-                        z-index: -1;
-                    }
+                   
 
-                    &:hover {
-                        &::before {
-                            animation: rotate 2s linear infinite;
-                        }
-                    }
+                  
                 }
-                .cart{
-                    position: relative;
-                    span{
-                        position: absolute;
-                        top: -15;
-                        right: -10px;
-                        color: $primaryColor;
-                        font-size: 16px;
-                        font-weight: 900;
-                    }
-                }
+               
             }
 
 
 
-            @keyframes rotate {
-                from {
-                    transform: rotate(0deg);
-                }
-
-                to {
-                    transform: rotate(360deg);
-                }
-            }
+           
         }
     }
 }

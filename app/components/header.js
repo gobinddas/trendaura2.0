@@ -35,7 +35,7 @@ const Header = () => {
 
             <button>Login</button>
             <div className='cart'>  <ShoppingCart className='icon' />
-              <span>10</span>
+              <span>9</span>
             </div>
           </div>
         </div>
