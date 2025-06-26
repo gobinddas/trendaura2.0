@@ -126,12 +126,13 @@
 
                     &:hover {
                         &::before {
-                            animation: rotate 2s linear infinite;
+                            animation: rotate 1s linear infinite;
                         }
                     }
                 }
                 .cart{
                     position: relative;
+                    cursor: pointer;
                     .icon{
                         width: 30px;
                         height: 30px;

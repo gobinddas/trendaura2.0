@@ -2,10 +2,12 @@
 import React, { useState } from 'react'
 import { Menu, ShoppingCart, House, Shirt, Store, UserRound } from 'lucide-react';
 import LoginSignup from './LoginSignup';
+import Cart from './Cart';
 
 const Header = () => {
 
-  const [showLogin, setShowLogin] = useState(false)
+  const [showLogin, setShowLogin] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   return (
     <div className='header-section'>
@@ -32,14 +34,14 @@ const Header = () => {
           <ul className='mobile-nav'>
             <li><a><House /> </a></li>
             <li><a> <Shirt /></a></li>
-            <li><a>   <Store /></a></li>
+            <li><a> <Store /></a></li>
             <li><a><UserRound /></a></li>
           </ul>
 
           <div className='quick-res'>
 
-            <button onClick={()=>setShowLogin(true)} >Login</button>
-            <div className='cart'>  <ShoppingCart className='icon' />
+            <button onClick={() => setShowLogin(true)} >Login</button>
+            <div className='cart' onClick={()=> setShowCart((prev)=> !prev)}   >  <ShoppingCart className='icon' />
               <span>9</span>
             </div>
             <a className='profile'><UserRound className='icon' /></a>
@@ -47,9 +49,12 @@ const Header = () => {
         </div>
       </div>
 
-      
-        <LoginSignup open={showLogin} onClose={()=>setShowLogin(false)} />
-     
+
+      <LoginSignup open={showLogin} onClose={() => setShowLogin(false)} />
+
+      <Cart open={showCart} onClose={()=> setShowCart(false)}    />
+
+
 
     </div>
   )
