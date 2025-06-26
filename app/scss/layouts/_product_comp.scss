@@ -1,0 +1,186 @@
+
+
+
+
+// Main grid container
+.chroma-product-grid {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  --x: 50%;
+  --y: 50%;
+  // --r is passed via inline style in the component
+}
+
+@media (max-width: 1024px) {
+  .chroma-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-product-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+// Individual product card styling from your SCSS, with SCSS variables
+.product-card {
+//   padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.10), 0 1.5px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.3s cubic-bezier(.25, .8, .25, 1),
+  background 0.3s cubic-bezier(.25, .8, .25, 1),
+  transform 0.25s cubic-bezier(.25, .8, .25, 1);
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --gradient-hue: 0;
+  background: #222; // Dark background for cards
+  color: #fff;
+  position: relative;
+  z-index: 1; // Ensure card is below the grid overlay
+
+  &:hover {
+    transform: scale3d(1.04, 1.04, 1.04);
+    box-shadow: 0 8px 32px rgba(245, 69, 0, 0.18), 0 4px 24px rgba(0, 0, 0, 0.14);
+    background: radial-gradient(
+            80px circle at var(--mouse-x) var(--mouse-y),
+            hsla(calc(20 + var(--gradient-hue, 0)), 90%, 60%, 0.28) 0%,
+            hsla(calc(50 + var(--gradient-hue, 0)), 95%, 60%, 0.25) 15%,
+            hsla(calc(320 + var(--gradient-hue, 0)), 90%, 60%, 0.23) 30%,
+            hsla(calc(140 + var(--gradient-hue, 0)), 80%, 50%, 0.23) 45%,
+            transparent 100%
+    ), #222;
+  }
+
+  .product-image {
+    position: relative;
+
+    img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 16px; // Slightly rounded corners for the image
+    }
+
+    .product-actions {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      
+      button {
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        color: $black;
+
+        .icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        &:hover {
+          background: $primaryColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  &:hover .product-actions {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .product-info {
+    padding: 15px ; // Adjusted padding
+
+    h4 {
+      font-size: 16px;
+      margin: 0 0 8px 0;
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .product-price {
+        font-weight: bold;
+        color: $primaryColor;
+        font-size: 18px;
+      }
+
+      .add-to-cart {
+        background-color: transparent;
+        color: #ccc;
+        border: 1px solid #555;
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: $primaryColor;
+          border-color: $primaryColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+// Main grid spotlight overlay layers
+.chroma-overlay,
+.chroma-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10; // Ensure overlay is on top of cards
+  backdrop-filter: grayscale(1) brightness(0.7);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.7);
+}
+
+.chroma-overlay {
+  background: rgba(0, 0, 0, 0.001);
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), transparent 20%, black 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), transparent 20%, black 100%);
+}
+
+.chroma-fade {
+  z-index: 11;
+  background: rgba(0, 0, 0, 0.001);
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), white 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), white 20%, transparent 100%);
+  opacity: 1;
+}

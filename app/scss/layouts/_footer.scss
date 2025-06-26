@@ -1,0 +1,81 @@
+.footer {
+    margin: 90px 0px;
+
+    .container {
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+
+            .footer-item {
+                width: 30%;
+
+                .brand {
+                    width: 180px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                    padding-top: 20px;
+                    letter-spacing: 1px;
+                }
+
+                .link-block {
+                    padding-top: 30px;
+
+                    a {
+                        font-size: 16px;
+                        color: $black;
+                        font-weight: 400;
+                        letter-spacing: 1px;
+                        margin-bottom: 10px;
+                        font-family: $national;
+
+
+                    }
+                    .social-icons{
+                        display: flex;
+                        gap: 20px;
+                        .item{
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 2px solid$primaryColor;
+                            border-radius: 50%;
+                            .icon{
+                                width: 18px;
+                                color: $black;
+                            }
+                            img{
+                                width: 17px;
+                            }
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+        .copyright{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            color: $black;
+            font-family: $national;
+            font-weight: 600;
+            a{
+                display: inline;
+                  font-weight: 600;
+                  color: rgb(0, 54, 90);
+                  font-family: $national;
+
+            }
+        }
+    }
+}

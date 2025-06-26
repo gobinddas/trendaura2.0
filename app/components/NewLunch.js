@@ -5,7 +5,7 @@ import Orb from './ShopNowCircular'
 const NewLunch = () => {
   return (
     <div className='section-newlunch'>
-      <div style={{ width: '100%', height: '800px', position: 'relative' }}>
+      <div style={{ width: '100%', position: 'relative' }}>
         <Orb
           hoverIntensity={0.5}
           rotateOnHover={true}
