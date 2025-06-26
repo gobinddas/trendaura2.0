@@ -1,7 +1,12 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { Menu, ShoppingCart, House, Shirt, Store, UserRound } from 'lucide-react';
+import LoginSignup from './LoginSignup';
 
 const Header = () => {
+
+  const [showLogin, setShowLogin] = useState(false)
+
   return (
     <div className='header-section'>
       <div className='header-fix-bg'>
@@ -33,13 +38,19 @@ const Header = () => {
 
           <div className='quick-res'>
 
-            <button>Login</button>
+            <button onClick={()=>setShowLogin(true)} >Login</button>
             <div className='cart'>  <ShoppingCart className='icon' />
               <span>9</span>
             </div>
+            <a className='profile'><UserRound className='icon' /></a>
           </div>
         </div>
       </div>
+
+      
+        <LoginSignup open={showLogin} onClose={()=>setShowLogin(false)} />
+     
+
     </div>
   )
 }

@@ -1,0 +1,99 @@
+.login-signup-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-signup-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .login-signup-box {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        padding: 30px 20px;
+        border-radius: 12px;
+        min-width: 320px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+
+.password-input{
+    position: relative;
+    .eye-icon{
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translate(0, -50%);
+        cursor: pointer;
+    }
+}
+
+            input {
+                width: calc(100% - 40px);
+                padding: 10px 20px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-size: 16px;
+                font-family: $national;
+            }
+
+            .submit-btn {
+                background: $primaryColor;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                padding: 10px 20px;
+                font-size: 1rem;
+                cursor: pointer;
+                margin-top: 15px;
+            }
+        }
+
+
+        .toggle-link {
+            margin-top: 20px;
+            text-align: center;
+
+            span {
+                font-size: 16px;
+                button {
+                    background: none;
+                    border: none;
+                    color: $primaryColor;
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 16px;
+                    padding: 0 0px 0px 12px;
+                    font-family: $avo;
+
+                }
+            }
+
+        }
+
+    }
+
+}
