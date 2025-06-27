@@ -187,7 +187,7 @@ const CollectionPage = () => {
               <div
                 className='toggle-filter'
                 onClick={() => setMobileFilterOpen(v => !v)}
-                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+               
               >
                 <ListFilterPlus />
               </div>
