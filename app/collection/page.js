@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from 'react'
 import { ChromaProductGrid } from '../components/ProductCard';
 import { products } from '../components/dummydata';
+import { ListFilterPlus } from 'lucide-react';
 
 // Ensure each product has an 'image' property for the ProductCard
 products.forEach(p => {
@@ -34,6 +35,7 @@ const CollectionPage = () => {
   const [page, setPage] = useState(1);
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
 
   const subcategoriesByCategory = useMemo(() => {
     const map = {};
@@ -98,7 +100,23 @@ const CollectionPage = () => {
     <div className='page-collection'>
       <div className='container'>
         <div className='filter-product-row'>
-          <div className='filter'>
+          {/* Filter Sidebar */}
+          <div
+            className={`filter${mobileFilterOpen ? ' show' : ''}`}
+            style={{
+              ...(typeof window !== 'undefined' && window.innerWidth < 992
+                ? { display: mobileFilterOpen ? 'flex' : 'none', flexDirection: 'column' }
+                : {})
+            }}
+          >
+            {/* Add a close button for mobile */}
+            {typeof window !== 'undefined' && window.innerWidth < 992 && (
+              <div style={{ textAlign: 'right', marginBottom: 12 }}>
+                <button onClick={() => setMobileFilterOpen(false)} style={{
+                  background: 'none', border: 'none', fontSize: 24, cursor: 'pointer'
+                }}>&times;</button>
+              </div>
+            )}
             <div className='category'>
               <h3 className='block-heading'>Categories</h3>
               <ul className='category-list'>
@@ -166,6 +184,13 @@ const CollectionPage = () => {
                 value={search}
                 onChange={e => { setSearch(e.target.value); setPage(1); }}
               />
+              <div
+                className='toggle-filter'
+                onClick={() => setMobileFilterOpen(v => !v)}
+                style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+              >
+                <ListFilterPlus />
+              </div>
             </div>
             <div className='product-collection'>
               <ChromaProductGrid items={paginatedProducts} columns={3} />

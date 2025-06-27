@@ -52,8 +52,7 @@
 
                 // Highlight active category
                 &.active {
-                    color: $white;
-                    background: $primaryColor;
+                    color: $primaryColor;
                 }
 
             }
@@ -76,8 +75,7 @@
 
                     &:hover,
                     &.active {
-                        background: $primaryColor;
-                        color: $white;
+                       color: $primaryColor;
                     }
                 }
             }
@@ -185,16 +183,61 @@
         }
     }
 
-    @media (max-width: 900px) {
-        .filter-product-row {
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .filter,
-        .search-product {
-            width: 100%;
-            padding: 24px 12px;
-        }
+    .search-product {
+  .search {
+    .toggle-filter {
+      display: none; // Hide by default (desktop)
     }
+  }
+}
+
+@media (max-width: 992px) {
+  .filter-product-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .filter,
+  .search-product {
+    width: 100%;
+    padding: 24px 12px;
+  }
+
+  .search-product {
+    .search {
+      flex-direction: row;
+      justify-content: space-between;
+      input[type='text'] {
+        width: 70%;
+      }
+      .toggle-filter {
+        display: flex; // Show on mobile
+        align-items: center;
+        cursor: pointer;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .filter {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90vw;
+    z-index: 1000;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    animation: slideUp 0.3s;
+    z-index: 9999999;
+  }
+  .filter.show {
+    display: flex;
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(40px);}
+  to { opacity: 1; transform: translateX(-50%) translateY(0);}
+}
 }
