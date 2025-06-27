@@ -44,7 +44,7 @@ export const ProductCard = ({ product }) => {
       <div className="product-info">
         <h4>{product.name}</h4>
         <div className="product-bottom">
-          <span className="product-price">NPR {product.price}</span>
+          <span className="product-price">NPR {product.price} <span className='discount-price'>{product.discountPrice} </span>  </span>
           <button className="add-to-cart" title="Add to Cart">
             <ShoppingCart size={18} className='icon' />
           </button>

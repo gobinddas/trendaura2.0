@@ -49,7 +49,6 @@
                 transition: color 0.2s, color 0.2s;
                 font-size: 16px;
                 font-family: 600;
-                position: relative;
 
                 // Highlight active category
                 &.active {
@@ -57,18 +56,10 @@
                     background: $primaryColor;
                 }
 
-                // Show subcategory dropdown on hover
-                &:hover .subcategory-list,
-                &.show-sub .subcategory-list {
-                    display: block;
-                }
             }
 
             .subcategory-list {
-                display: none;
-                position: absolute;
-                left: 100%;
-                top: 0;
+                
                 min-width: 160px;
                 background: $white;
                 border-radius: 8px;
@@ -153,9 +144,8 @@
 
     .search-product {
         flex: 1;
-        background: $white;
         border-radius: 12px;
-        box-shadow: 0 2px 12px rgba($black, 0.06);
+       
         padding: 32px 24px;
         min-height: 400px;
 
@@ -190,7 +180,8 @@
 
         .product-collection {
             // Add your product grid/list styles here
-            min-height: 200px;
+            max-height: 100vh;
+            overflow: auto;
         }
     }
 

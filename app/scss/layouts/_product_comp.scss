@@ -136,6 +136,10 @@
         font-weight: bold;
         color: $primaryColor;
         font-size: 18px;
+        .discount-price{
+          font-size: 14px;
+          text-decoration: line-through;
+        }
       }
 
       .add-to-cart {
