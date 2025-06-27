@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Menu, ShoppingCart, House, Shirt, Store, UserRound } from 'lucide-react';
 import LoginSignup from './LoginSignup';
 import Cart from './Cart';
+import Link from 'next/link';
 
 const Header = () => {
 
@@ -23,19 +24,19 @@ const Header = () => {
             <img src='./logo-dark.png' />
           </div>
           <ul className='nav'>
-            <li><a>Home</a></li>
-            <li><a>Collections</a></li>
-            <li><a>Brand</a></li>
+            <li><Link href="./">Home</Link></li>
+            <li><Link href="./collection">Collections</Link></li>
+            <li><Link href="./brand">Brand</Link></li>
 
           </ul>
 
 
 
           <ul className='mobile-nav'>
-            <li><a><House /> </a></li>
-            <li><a> <Shirt /></a></li>
-            <li><a> <Store /></a></li>
-            <li><a><UserRound /></a></li>
+            <li><Link href="./"><House /> </Link></li>
+            <li><Link href="./collection"> <Shirt /></Link></li>
+            <li><Link href="./brand"> <Store /></Link></li>
+            <li><Link href="./profile"><UserRound /></Link></li>
           </ul>
 
           <div className='quick-res'>
@@ -44,7 +45,7 @@ const Header = () => {
             <div className='cart' onClick={()=> setShowCart((prev)=> !prev)}   >  <ShoppingCart className='icon' />
               <span>9</span>
             </div>
-            <a className='profile'><UserRound className='icon' /></a>
+            <Link href="./profile" className='profile'><UserRound className='icon' /></Link>
           </div>
         </div>
       </div>

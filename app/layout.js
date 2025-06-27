@@ -1,4 +1,3 @@
-
 import "./scss/style.scss"
 import Header from "./components/header";
 import Footer from "./components/Footer";
@@ -18,14 +17,17 @@ export default function RootLayout({ children }) {
       <head>
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=National+Park:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=National+Park:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
       </head>
       <body >
-        <Header/>
+        <div className="background-fix">
+          <img src="./bg.jpg" />
+        </div>
+        <Header />
         {children}
-        <Footer/>
-        
+        <Footer />
+
       </body>
     </html>
   );

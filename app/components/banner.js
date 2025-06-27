@@ -16,9 +16,7 @@ const bannerImages = [
 
 const Banner = () => (
   <div className="index-banner">
-    <div className="background-fix">
-      <img src="./bg.jpg" />
-    </div>
+   
     <div className="container">
       <Swiper
         modules={[Pagination, Autoplay]}
