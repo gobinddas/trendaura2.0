@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react';
 import { Heart, ShoppingCart, Eye } from 'lucide-react';
+import Link from 'next/link';
 
 // A single Product Card component with its own hover effect logic
 export const ProductCard = ({ product }) => {
@@ -35,19 +36,19 @@ export const ProductCard = ({ product }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="product-image">
-        <img src={product.image} alt={product.name} loading="lazy" />
+        <img src={product.mainImage} alt={product.name} loading="lazy" />
         <div className="product-actions">
           <button title="Add to Wishlist"><Heart size={16} className='icon' /></button>
-          <button title="View"><Eye size={16} className='icon' /></button>
+          {/* <Link href={`/collection/${product.id}`} title="View"><Eye size={16} className='icon' /></Link> */}
         </div>
       </div>
       <div className="product-info">
         <h4>{product.name}</h4>
         <div className="product-bottom">
           <span className="product-price">NPR {product.price} <span className='discount-price'>{product.discountPrice} </span>  </span>
-          <button className="add-to-cart" title="Add to Cart">
+          <Link href={`/collection/${product.id}` }className="add-to-cart" title="Add to Cart">
             <ShoppingCart size={18} className='icon' />
-          </button>
+          </Link>
         </div>
       </div>
     </article>
