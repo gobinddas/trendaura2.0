@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body >
         <div className="background-fix">
-          <img src="./bg.jpg" />
+          <img src="/bg.jpg" />
         </div>
         <Header />
         {children}

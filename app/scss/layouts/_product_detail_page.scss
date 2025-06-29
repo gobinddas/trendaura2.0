@@ -1,0 +1,185 @@
+.product-detail-page {
+ margin-top: 100px;
+  .product-detail-container {
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+    border-radius: 18px;
+    padding: 32px;
+    background: #fff;
+    box-shadow: 0 4px 24px 0 rgba(60,72,88,0.10);
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 24px;
+      padding: 18px;
+    }
+  }
+  .product-images {
+    flex: 1;
+    .main-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+      margin-bottom: 18px;
+      display: block;
+      background: #f8f8f8;
+    }
+    .secondary-images {
+      display: flex;
+      gap: 12px;
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1.5px solid #eee;
+        background: #fafbfc;
+        cursor: pointer;
+        transition: border 0.2s;
+        &:hover {
+          border: 1.5px solid #f54500;
+        }
+      }
+    }
+  }
+  .product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    .product-meta {
+      color: #888;
+      font-size: 1rem;
+      display: flex;
+      gap: 18px;
+    }
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #f54500;
+      .discount {
+        color: #888;
+        font-size: 1rem;
+        text-decoration: line-through;
+        margin-left: 12px;
+      }
+    }
+    .product-rating {
+      font-size: 1.1rem;
+      color: #f59e42;
+    }
+    .product-description {
+      font-size: 1.05rem;
+      color: #222;
+    }
+    .product-options {
+      font-size: 1rem;
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .option-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 4px;
+        strong {
+          min-width: 60px;
+        }
+        .option-group {
+          display: flex;
+          gap: 8px;
+        }
+        .option-btn {
+          padding: 6px 16px;
+          border: 1.5px solid #eee;
+          border-radius: 6px;
+          background: #f3f3f3;
+          color: #222;
+          cursor: pointer;
+          font-weight: 500;
+          transition: all 0.18s;
+          &.selected, &:hover {
+            background: #f54500;
+            color: #fff;
+            border-color: #f54500;
+          }
+          &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+          }
+        }
+        .quantity-group {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          .qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: #f3f3f3;
+            color: #222;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.18s;
+            &:hover:enabled {
+              background: #f54500;
+              color: #fff;
+            }
+            &:disabled {
+              opacity: 0.5;
+              cursor: not-allowed;
+            }
+          }
+          .qty-value {
+            min-width: 28px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+          }
+          .stock-info {
+            margin-left: 10px;
+            color: #888;
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+    .product-actions {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      .add-to-cart-btn, .buy-now-btn {
+        padding: 12px 32px;
+        background: #f54500;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.18s;
+        &:hover:enabled {
+          background: #d63c00;
+        }
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+      .buy-now-btn {
+        background: #222;
+        &:hover:enabled {
+          background: #111;
+        }
+      }
+    }
+  }
+}

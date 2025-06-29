@@ -11,7 +11,7 @@ const Brandpage = () => {
             <p>
              At Trendaura, we are deeply committed to providing clothing that reflects exceptional quality, comfort, and style. Every piece is crafted from premium fabrics chosen for their durability, feel, and performance. Our team of skilled designers constantly studies global fashion trends to ensure our collections stay modern, elegant, and relevant. <br/>  We blend timeless designs with contemporary aesthetics, creating clothing that flatters all body types and suits every occasion. Whether you are dressing for work, casual outings, or special events, our pieces are made to help you feel confident, stylish, and comfortable. Trendaura is where lasting quality meets everyday fashion with purpose.
             </p>
-            <img src='./banner2.jpg' />
+            <img src='/banner2.jpg' />
           </div>
 
 

@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { Plus, Minus, Trash } from 'lucide-react';
 
 const initialItems = [
-    {id: 1, img: './banner1.jpg', name:"Clothing Item one", quantity:1, size:'M'},
-    {id:2, img:'./banner2.jpg', name:"Clothing Item two", quantity:2, size:"L" },
-    {id:3, img:'./banner3.jpg', name:'Clothing Item three', quantity:3, size:'S'},
+    {id: 1, img: '/banner1.jpg', name:"Clothing Item one", quantity:1, size:'M'},
+    {id:2, img:'/banner2.jpg', name:"Clothing Item two", quantity:2, size:"L" },
+    {id:3, img:'/banner3.jpg', name:'Clothing Item three', quantity:3, size:'S'},
 ]
 
 const Cart = ({open, onClose}) => {

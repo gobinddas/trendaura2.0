@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className='header-section'>
       <div className='header-fix-bg'>
-        <img src="./bg.jpg" />
+        <img src="/bg.jpg" />
       </div>
 
 
@@ -21,7 +21,7 @@ const Header = () => {
       <div className='container'>
         <div className='nav-bar'>
           <div className='brand'>
-            <img src='./logo-dark.png' />
+            <img src='/logo-dark.png' />
           </div>
           <ul className='nav'>
             <li><Link href="./">Home</Link></li>

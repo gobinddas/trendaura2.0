@@ -6,17 +6,17 @@ const dummyWishlist = [
     {
         id: 1,
         name: 'Nike Air Max 270',
-        image: './banner1.jpg'
+        image: '/banner1.jpg'
     },
     {
         id: 2,
         name: 'Adidas Ultraboost',
-        image: './banner2.jpg'
+        image: '/banner2.jpg'
     },
     {
         id: 3,
         name: 'Puma Rs-X',
-        image: './banner3.jpg'
+        image: '/banner3.jpg'
     }
 ]
 const WishList = () => {

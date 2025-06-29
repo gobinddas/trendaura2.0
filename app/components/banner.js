@@ -9,9 +9,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const bannerImages = [
-  "./sale-3.png",
-  "./sale-2.png",
-  "./sale-1.png"
+  "/sale-3.png",
+  "/sale-2.png",
+  "/sale-1.png"
 ];
 
 const Banner = () => (

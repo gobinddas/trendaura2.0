@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className='footer-row'>
                     <div className='brand-section footer-item'>
                         <div className='brand'>
-                            <img src='./logo-dark.png' />
+                            <img src='/logo-dark.png' />
                         </div>
                         <p>Trend Aura Clothing is a modern eCommerce fashion brand offering stylish, comfortable, and affordable clothing that reflects the latest trends for every personality.</p>
                     </div>
@@ -33,7 +33,7 @@ const Footer = () => {
                             <div className='social-icons'>
                                 <a className='item'><Facebook className='icon' /></a>
                                 <a className='item'><Instagram className='icon' /></a>
-                                <a className='item'><img src='./tiktok.png' /></a>
+                                <a className='item'><img src='/tiktok.png' /></a>
                             </div>
                         </div>
                     </div>
