@@ -4,11 +4,15 @@ import { Menu, ShoppingCart, House, Shirt, Store, UserRound } from 'lucide-react
 import LoginSignup from './LoginSignup';
 import Cart from './Cart';
 import Link from 'next/link';
+import { useCart } from './CartProvider';
 
 const Header = () => {
 
   const [showLogin, setShowLogin] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
+  const{cart} = useCart()
+  const totalItems = cart.reduce((sum, item)=> sum + item.quantity, 0)
 
   return (
     <div className='header-section'>
@@ -43,7 +47,7 @@ const Header = () => {
 
             <button onClick={() => setShowLogin(true)} >Login</button>
             <div className='cart' onClick={()=> setShowCart((prev)=> !prev)}   >  <ShoppingCart className='icon' />
-              <span>9</span>
+              <span>{totalItems}</span>
             </div>
             <Link href="./profile" className='profile'><UserRound className='icon' /></Link>
           </div>
