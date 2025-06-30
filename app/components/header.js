@@ -28,19 +28,19 @@ const Header = () => {
             <img src='/logo-dark.png' />
           </div>
           <ul className='nav'>
-            <li><Link href="./">Home</Link></li>
-            <li><Link href="./collection">Collections</Link></li>
-            <li><Link href="./brand">Brand</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/collection">Collections</Link></li>
+            <li><Link href="/brand">Brand</Link></li>
 
           </ul>
 
 
 
           <ul className='mobile-nav'>
-            <li><Link href="./"><House /> </Link></li>
-            <li><Link href="./collection"> <Shirt /></Link></li>
-            <li><Link href="./brand"> <Store /></Link></li>
-            <li><Link href="./profile"><UserRound /></Link></li>
+            <li><Link href="/"><House /> </Link></li>
+            <li><Link href="/collection"> <Shirt /></Link></li>
+            <li><Link href="/brand"> <Store /></Link></li>
+            <li><Link href="/profile"><UserRound /></Link></li>
           </ul>
 
           <div className='quick-res'>
@@ -49,7 +49,7 @@ const Header = () => {
             <div className='cart' onClick={()=> setShowCart((prev)=> !prev)}   >  <ShoppingCart className='icon' />
               <span>{totalItems}</span>
             </div>
-            <Link href="./profile" className='profile'><UserRound className='icon' /></Link>
+            <Link href="/profile" className='profile'><UserRound className='icon' /></Link>
           </div>
         </div>
       </div>

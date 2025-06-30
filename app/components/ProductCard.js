@@ -2,10 +2,19 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Heart, ShoppingCart, Eye } from 'lucide-react';
 import Link from 'next/link';
+import { useWishlist } from './WishlistContext';
 
 // A single Product Card component with its own hover effect logic
 export const ProductCard = ({ product }) => {
   const cardRef = useRef(null);
+  const {addToWishlist} = useWishlist();
+  const handleAddToWishlist = () =>{
+    addToWishlist({
+      id:product.id,
+      name:product.name,
+      mainImage:product.mainImage,
+    })
+  }
 
   const handleMouseMove = (e) => {
     const card = cardRef.current;
@@ -38,7 +47,7 @@ export const ProductCard = ({ product }) => {
       <div className="product-image">
         <img src={product.mainImage} alt={product.name} loading="lazy" />
         <div className="product-actions">
-          <button title="Add to Wishlist"><Heart size={16} className='icon' /></button>
+          <button title="Add to Wishlist" onClick={handleAddToWishlist}><Heart size={16} className='icon' /></button>
           {/* <Link href={`/collection/${product.id}`} title="View"><Eye size={16} className='icon' /></Link> */}
         </div>
       </div>
